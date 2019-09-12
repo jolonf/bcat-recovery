@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <title>Bcat recovery</title>
+
+  <style>
+    label {
+      margin-top: 5px;
+    }
+  </style>
+
+  <script type="text/javascript" src="https://unpkg.com/bsv@0.30.0/bsv.min.js"></script>
+  <script src="https://www.moneybutton.com/moneybutton.js"></script>
+
+</head>
+
+<body>
+
+  <h2>Bcat recovery</h2>
+
+  <form style='display: flex; flex-direction: column; align-items: flex-start;'>
+
+    <label for='fileName'>File name: </label>
+    <input type='text' id='fileName'>
+    <label for='mimeType'>MIME type: </label>
+    <input type='text' id='mimeType' placeholder="e.g. image/jpeg">
+    <label for='encoding'>Encoding: </label>
+    <input type='text' id='encoding' placeholder='e.g. binary'>
+    <label for='txIds'>Transaction ids: </label>
+    <textarea id='txIds' cols="80" rows='10' placeholder="White space separated transaction ids"></textarea>
+
+    <button id='prepareButton' style='margin-top: 10px'>Prepare Money Button...</button>
+  </form>
+
+  <div id='bcat-money-button'>
+  </div>
+  <p id='txId'></p>
+
+  <script src='bcat-recovery.js'></script>
+
+</body>
+
+</html>
