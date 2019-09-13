@@ -12,18 +12,13 @@ function prepareTransaction(e) {
   const encoding = document.querySelector('#encoding').value || ' ';
   const txIdTextArea = document.querySelector('#txIds').value;
 
-  const txIds = txIdTextArea.match(/\S+/g);
+  const txIds = txIdTextArea.match(/[0-9A-Fa-f]{64}/g);
+
+  console.log(txIds);
 
   if (!txIds) {
     alert(`No transaction ids entered`);
     return;
-  }
-
-  for (const txId of txIds) {
-    if (!/[0-9A-Fa-f]{64}/g.test(txId)) {
-      alert(`Not a valid transaction id: ${txId}`);
-      return;
-    }
   }
 
   const script = [
